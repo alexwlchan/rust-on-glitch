@@ -5,7 +5,7 @@ set -o nounset
 
 ROOT="$(git rev-parse --show-toplevel)"
 
-docker run -it --volume "$ROOT:$ROOT" --workdir "$ROOT" \
+docker run -it \
   rust:slim-bullseye \
   bash -c "
     cargo build --release &&
